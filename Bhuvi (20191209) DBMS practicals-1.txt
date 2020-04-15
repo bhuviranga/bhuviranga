@@ -1,0 +1,316 @@
+﻿COMPUTER SCIENCE PRACTICAL
+NAME Bhuvi Ranga
+ROLL NO. - 20191209
+DEPARTMENT- STATISTICS
+Ques
+mysql> create database du_library;
+mysql> create table LibraryBooks (
+Accession_ Number decimal (10, 5) primary key,
+-Title varchar (30) not null,
+-Author varchar (50) not null,
+Department varchar (50) not null,
+-> PurchaseDate date not null
+PILce decmal( ,2) not null);
+mysqi> Create table IssuedBooks (
+Accession_Number decimal (10,5) not null,
+->Borrower Varchar (30) not null
+-foreign key (Accession_Number) references
+LibraryBooks (Accession_Number)) ;
+(a) Primary Key- AccesSion_Number in table LibraryBooks
+Foreign Key- Accession_Number in table IssuedBooks
+mysqi> insert into LibraryBooks values (51235.56, "Introduction to
+Matrices", "S.C. Gupta", "stattistics " '1997-01-12" 105.00)
+mysql> insert into LibraryBooks values (21826.46, "Database System
+Concepts Lnitra ArOra C 200370/ S0D20.00)
+mysql> insert into LibraryBooks values (121.4345, "Fundamental of
+Statistics ", "V.K. Kapoor", "Statistics" '2002/03/31' , 550.00)
+mysqi> insert into LibraryBooks values (76389.4647, "Play with
+Python " "Navathe", "CS" Z002/06/21499.00)
+mysqi> insert into LibraryBooks values (6737.84, "Discrete
+Maths", "M.L.Aggrawal" "Mathemat ics "'1999/08704"450.00) ;
+mysql> insert into IssuedBoo ks values ( 21826.46, "Vinay Kumar Singh") ;
+mysq nsert nto ssueasookS vaiues 3 asav nouanaty
+mysq1nsert into ssuedsooks vaiues 584"utkarsn mathur ) shi")
+mysq nsertnto SSuedsoOkS vaiues 820.40AIYanagnuvansni"
+mysqi 1nsert into issuedBookS values 6589.464', "Jatin Choubey")
+(b)mysql> set foreign_key_checks=of f;
+o ee accesson mder21826. 46
+ysq
+aeiete rOm iDraryboOKS Wnere titeDatabase sYstem
+set fore1gn_*
+Concep
+mysq set foreign_key_checks =on;
+(c) mysql> update 1ibrarybooks set department="Cs" where title="discrete(d) mysql> select Title from 1ibrarybooks where department"CS";
+(e)mysql> select Title from 1ibrarybooks where department="cs" and
+author"navathe";
+(E) mysql> select Title from 1ibrarybooks l, issuedbooks i whe re
+.acceSS1On_dmderl.accesS1On_number ana L.aepartmentcs
+(g) mysql> select Title from librarybooks where price<500 and
+purchase_date between '1999/01/01 ' and '2004/01/01';
+Ques
+mysq create datadase csSTudent
+mysql create table personal_informartion(
+*
+RoL-_no int (L0) Primary key
+-Name char (30) not null,
+-> DOB date not null,
+-Address varchar (70) not null,
+->Marks_in_i2th int (2) not null
+-> Phone_number Varchar (10) not nul1);
+mysql> create tab le Paper_ Details (
+-Paper_code int(4) primarY key,
+Nameo r Paper char (30) unique) ;
+mysql> create table Academic_Details (
+ROL-_no 1nt (10 primary key,
+Paper_code int (4) not null,
+Attendence int (3) not null,
+Marks 1nt ( 3) not null,
+-foreign key (roll_no) references personal_informartion (roll_no),
+Orelg key(paper_code rererences Faper aetalis (Paper-COde)
+(a) Primary key Roll_no in table personal informartion
+aPe-ouen taDie Faper_detalls
+Foreign key ROL-n0 1n aDe cade - *.
+aPe OueU LaDe ACaemic_Detall
+c "P 0a ntomartlon values (1240, "Vinay Kumar
+.00 400
+values (1233, "Rohit
+alues (1204, "Ankit""2000
+2001-04-29'"Uttaraknana
+Delhi", 94. 9837643368):
+, *** o9906)
+-*Oa E E1O vaiues (L204, "Ankit", '2000-03-
+l informartion values (1225, "Mohammad
+Muitaba", 2001-09-21 "UttaT Pradesh", 97. 9637453672) :
+adesn", l, 96314536/2) ;|
+Labdmysqi> insert into personal_informartion values (1223, "Likhit Giri", '2001-
+l1-09 "Delhi", 92,9764563726)
+mysql> insert into paper_details value (1, "Descriptive statistics") ;
+mysqi> insert into paper_detalls value (Z, "Environmental studies" ) ;
+mysqL insert 1nto paper_detalIS ValLue (3, ALgeDIa")i
+mysqi> insert into paper_detalls value (4,"introductlon to Matrices")
+mysqi inset into papeT_deta1ls vaLue(5, "Database management system") ;
+mysql> insert into Academic_details values (1240, 2,80,70);
+mysql> insert into Academic_details values (1233, 2,70,90);
+mysql> insert into Academic_details values (1204,2,65, 91);
+ys 1nset Into ACademic_details values (1225,2,65,91);
+mysql> insert into Academic_details values (1223, 1, 75,65) ;
+(D) mysqi seLect pd. paper_code, pd. nameoTpaper, Pl.name trom
+paper_details as pd, personal_infoImartion as pi where paper_code=2 and
+pl.roL_no in (select rOll_no Irom academiC_detalLs where paper_Codez and
+attendence>75 and marks>60) ;
+(C) mysqi> select name from personal_inrormartion as pl,
+academic_details as ad where pi. roll_n0=ad.roll_no and ad. marks>60 and
+ad.paper_codel;
+(d) mysql> select pi. name, ad.attendence, ad.marks from
+personal_informartion as pi, academic_details as ad wherre
+pi.roll_no=ad.roll_no;
+(e)mysq select name rrom persona_inrormartion as pl
+academic_details as ad where pi.roll_no=ad.roll_no and pi.roll_no= (select
+roll_no from academiC_details where marks= (select max (mar ks) from
+academic_details) )
+Ques 3
+mysqi create database twowheeler;
+mysql create table customer (
+Custid varchar (20) Primary key
+emall varchar (90 not nuil
+KererreriD varchar(<0))
+mysq
+create table Blcycleodel
+aE Cdt (Oprlmary key
+ye varchar (0) not nui
+mysql> create table Bicycle (-BicycleId varchar (20) primary key,
+DatePurchased date not null,
+-Color Char (10) not null,
+Custia varchar (20) not null,
+- ModeiNo varchar (10) not null,
+-> foreign key (Cust Id) references customer (CustId),
+-> foreign key (ModelNo) references BicycleModel (Mode INo));
+mysql> create table Service (
+->Start Date date not null,
+BicycleId varchar (20) not null,
+EndDate date not null,
+Foreign key (Bicycle Id) references Bicycle (BicycleId) ) ;
+(a) Primary Key CustId in table Customer
+ModelNo in table BicycleModel
+Bicycle Id in table Bicycle
+Foreign Key- Cust Id in table Bicycle
+Mode lNo in table Bicycle
+Bicycleld in table service
+mysql insert into customer values (1001, "vks12458gmail.com "Vinay
+Singh", 9813645321, "Cl");
+mysql> insert into customer values (1002, "kk4373@gmail.com", "Krishna
+Kumar", 8373876327, "A2") ;
+mysql> insert into customer values (1003, "ravishkumar8653@gmail.com""
+Ravish Kumar",9375472814, "C3");
+mysql> insert into customer values (1004, "sumans s7368 @gmail.com", "Suman
+Singh" 8293765392, "B7") ;
+mysql> insert into customer values (1005, "reenas ingh3753@gmail.com", "Reena
+Singh" ,9375428765, "c5") ;
+mysql> insert into bicyclemodel values ("M101", "Honda", "Activa") ;
+mysqi1nsert nto bicyclemodel values(M2 Hero MasterO")
+mysqi 1nsert 1nto bicyclemodel values ( Bajaj Dscover")
+mysql insert into bicyclemodel values (M04Hero", Splendor"
+mysql> insert into bicyclemodel values ("Ml05", "Yamaha", "EZ") ;
+ys nsert1nto bicycle values ("B501", '2019-02-
+05 Red"
+1
+yeVaiues ("B502", '2018-05-
+22 ver""O0 ML0
+13, 1 ce value ( "B504", '2019-04-
+08", "black" , "l002", "MI02") ;
+mysql> insert into service values('2019-09-09', 'B505', "2019-09-12")
+Cycie
+Values ("B503", '2020-01-
+icycle values ("B505", '2020-02
+1 -ek" 1002", "M102")
+1
+Y
+neart+ nto seruice values ( +201g-05-17, 'B501', 2019-05-19');
+set nto service values ('2019-05-17', 'B501', '2019-05-19')mysqi 1nsert into service values('2020-0l-18 "B50Z', *2020-01-20)
+(b) mysl Select * from customer where custiD in (Select custid from
+bicycle where mo de lno in (select Modelno from bicyclemode l where
+manufacturer="Honda")):
+(C) mysq select Irom bicyclemodel where modeLno 1n (select modeino
+from bicycle where custid in (select custid from customer where
+rererrerid-"Ci") );
+(d) mysq select bm. manufacturer from bicycle as bi, bicyclemodel as bm
+where bi.mode lno=bm. mo delno and bi.color="red" :
+(e) mysql> select modelno from bicycle where bicycleid in (select distinct
+bicycleid from service) ;
+Que
+mysql create database employee_details;
+mysql> use employee_details;
+mysql> create table employee (
+->Person_name char (30) primary key,
+-> Street char (30) not null,
+-city char (15) not null) ;
+mysql> create table Company (
+-Company_name varchar (30) Primary key,
+-City char (15)) ;
+mysql> create table Works (
+Person_name char (30),
+Company_name varchar(30)
+Salary decimal (10,2),
+Eoreign key (Person_name) references employee (Person_name),
+rOreign key(ompany_name) rererences Company (company_name))
+mysq Create table manages
+SO1_de cha(30)
+anager_name char(s0)
+TOrelgn keyerson_name rererences empioyee ( FersOn_nane))
+mysql insert into employee values (vinay" "23/34 Bblock "GoTakhpur)
+mag1 nger+ nto em 1ee Vales arima"7472"hck", "analore") :
+'Eo
+"45
+Se 1 neert+ into employee values ("Nikhil", " 62/7 d block"Delh;mysql> insert into employee values ("Nupur", "91/8 C block" , "Banglore");
+mysql> insert into company values ("Samba Bank", "Delhi") ;
+mysql insert 1nto company values ( "NCB Bank" "Gorakhpur")
+mysqi> insert into companY values ("AX1s Bank "No1da") ;
+mysql> insert into company values ("SEI bank" "Lucknow") ;
+mysqi> insert into company values ("Kotak Bank", "Banglore") ;
+mysql> insert into works values ("Vinay" "Samba Bank" 20000)
+mysql> insert into works values ("Gaurav", "NCB Bank", 15000);
+mysql insert into works values (RahulSamba Bank,5000)
+mysql> insert into works values ("Jatin" , "SBI Bank " , 8 000)
+mysql insert into works values (Garima "Ax1s Bank",10000)
+mysql> insert into works values ("Suresh ", "NCB Bank", 20000);
+mysql insert into works values (Kapil", "Kotak Bank"15000)
+mysql> insert nto works values ("Pawan", "Axis Bank", 20000) ;
+mysqi> insert into wor ks values ("Nikhil", "SBI Bank", 12000)
+mysqi> insert into wor ks values ("Nupur", "Kotak Bank", 18000);
+(a) Primary Key- Person_name in table employee
+Company_name in table companny
+Foreign Key- Person_name in table works
+Company_name in table works
+Person_name in table manages
+(b) mysql> alter table employee add column email varchar (20)
+(c) mysql> select distinct (manager_name) from manages as m, works as w
+where m.person_name=W . person_name and (w.company_nameSamba bank" or
+W.Company_name="NCB Bank ") ;
+(d) mysql> select e.Person_name, e.Street, e.City, w. salary from
+employee as e, Works as w where e.person_name=w.Pperson_name and
+W.company_name"Samba Bank" and w.salary>l0000;
+(e) mysql> select e.person_ name from employee as e, Works as W Company
+as c wnere e.person_name=w .person_name and e.citYC. citY and
+W.company_namesC . company_name
+(f) mysql> select company_name, max (salary) min (salary), avg (salary)
+rOm WorKS group Dy Company-nane
+(g mysqL select company_name, sum (salaryY) count (company_name) as
+LDe O epoyees OwOS9Oup Y COpaiy_iaue
+(h) mysql> select company_name, max (salary) from works;
+Ques
+mysql> create dat abase product;mysq use product;
+mysqi> create table suppliers (
+Sno 1nt (8) primarY key,
+Sname varchar (20) not null,
+Status char (20) not nul,
+->ScitY char (30) not null);
+mysqi> create table Parts
+PNO int (8) primarY Key,
+Pname varchar (20) not null,
+ColOur varchar (20) not null,
+-> Weight int (4) not null,
+-> CitY char (20) not nuli)
+mysql> create table Project (
+-Uno 1nt (8) PILmry Key
+name char (20) not nuLl,
+Jclty
+(20) not null)
+Char
+mysql create table shipment (
+Sno varchar (20) not nullL,
+-Pno int (8) not null,
+-> Jno int (8) not null
+->Quantity int (8) not null,
+- foreign key (Sno) references suppliers (Sno)
+->foreign key (Pno) references Parts (Pno),
+-Foreign key (Jno) references Project (Jno) )
+mysql> insert into suppliers values ("101", "S1", 30, "London ");
+mysql> insert into suppliers values ("l02", "s2", 19, "New York");
+mysq nsert nto suppilerS vaiueS é arl5
+mysqu 1nsert into suppllers values(04 S2" T0, "Los Angeles")
+mysqu 1nsert into suppllers values("04 S2" T0, "Los Angeles ")
+mysql> insert into parts values ( "501", "P1", "Black", 16, " Paris ") ;
+mysqi 1nsert 1nto parts values 02 Z ked"4"London")
+mysql> insert nto parts values ("503"P3""Gray", 20, "London ") ;
+mys nsertnto partS vaiues eeno ngapore
+mysql> insert into parts values 505", "P2", "Black " , 10, "New York") ;
+mysql> insert into project values (1001,"J1", "London")
+s PO vaueS
+mysq nsert nto prOject vaiues 3 Ne IOrK"
+e
+mysql> 1nsert into project values (1005, "J4°, "De lhi") ;
+mysq 1nsert 1nto shipment values (101,504,1002,250);
+he 101'100
+Y * * 101O1 100 100i.
+mysq 1nsert into snipment values(L0L,S0l, 1002, 100)(a) Prmary Key- Sno 1n table suPpliers
+O n tadLe Farts
+Jno in table TOJect
+Foreign key- Sno 1n table shipment
+Fno n tabie snipment
+Jno in table shipment
+(b) mysql> select Sno from suppliers where scity=" Paris " and Status>20 ;
+(c) mysql> Select fr om suppliers where Sno in (select Sno from shipment
+where Pno in (select Pno trom parts wnere Pname"PZ")) Order Dy sno
+(d) mysql> select Sname from suppliers where Sno in (Select distinct sno
+from shipment where Pno in (select Pno from parts where Pname!"P2"))
+(e) mysql> select s.Sn0, s.Pno, s.Jno, 3.Quant ity, s.quantity*p. weight
+asTota_shipment_welght rOm shipment as S, parts as P Wnere
+Spno P-pho;
+(E) mysql> Select * from shipment where quantity between 300 and 750;
+(g) mysql> select Pno from parts where weight>16 or pno in (select pno
+from shipment where sno in (select S.sno from shipment as S, suppliers as
+su where s.sno=su.sno and su.sname="S2") )
+(h) mysql> select city from parts where colour= "Red" and Pno in (select
+pno from shipment where quantity>5) ;
+(1) mysql> select * from parts where pno in (select Pno Erom shipment
+where sno in (select sno from suppliers where Scity="London");
+(J) mysql> select Pno from shipment where sno in (select sno from
+suppliers where scity"London") and Jno 1n (selectt Jno trom project where
+Jcity"London") ;
+(k) mysql> select count (distinct (Jno) ) as "No. of Project Supplied by
+supplier Si" trom shipment here sno 1n (select sno rrom suppliers where
+Sname "Si");
+() mysql select count () Irom parts where Pno 1n (select PnoIrom
+shipment where sno 1n (selectt Sno trom suPpLlers where sname
+Pname"PI";
+SI")) and
